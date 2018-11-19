@@ -19,12 +19,12 @@ export class WordsService {
       },
       {
         id: 1,
-        word: "Friend",
+        word: "Smiling",
         good: true
       },
       {
         id: 2,
-        word: "Warm",
+        word: "Cheerful",
         good: true
       },
       {
@@ -34,23 +34,23 @@ export class WordsService {
       },
       {
         id: 4,
-        word: "Bright",
+        word: "Attractive",
         good: true
       },
       {
         id: 5,
-        word: "Wonderful",
+        word: "Appealing",
         good: true
       },
       {
         id: 6,
-        word: "Angry",
-        good: false
+        word: "Triumph",
+        good: true
       },
       {
         id: 7,
-        word: "Upset",
-        good: false
+        word: "Cherish",
+        good: true
       },
       {
         id: 8,
@@ -59,10 +59,95 @@ export class WordsService {
       },
       {
         id: 9,
-        word: "Pain",
+        word: "Joyous",
+        good: true
+      },
+      {
+        id: 10,
+        word: "Success",
+        good: true
+      },
+      {
+        id: 11,
+        word: "Abandonment",
+        good: false
+      },
+      {
+        id: 12,
+        word: "Peace",
+        good: true
+      },
+      {
+        id: 13,
+        word: "Greed",
+        good: false
+      },
+      {
+        id: 14,
+        word: "Empathy",
+        good: true
+      },
+      {
+        id: 15,
+        word: "Deception",
+        good: false
+      },
+      {
+        id: 16,
+        word: "Trust",
+        good: true
+      },
+      {
+        id: 17,
+        word: "Failure",
+        good: false
+      },
+      {
+        id: 18,
+        word: "Excellent",
+        good: true
+      },
+      {
+        id: 19,
+        word: "Rotten",
+        good: false
+      },
+      {
+        id: 20,
+        word: "Hatred",
+        good: false
+      },
+      {
+        id: 21,
+        word: "Sickening",
+        good: false
+      },
+      {
+        id: 22,
+        word: "Evil",
+        good: false
+      },
+      {
+        id: 23,
+        word: "Poison",
+        good: false
+      },
+      {
+        id: 24,
+        word: "Tragic",
+        good: false
+      },
+      {
+        id: 25,
+        word: "Humiliate",
+        good: false
+      },
+      {
+        id: 26,
+        word: "Disaster",
         good: false
       }
-    ]
+    ];
   }
 
   getWords(): Observable<Word[]> {

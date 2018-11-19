@@ -1,45 +1,71 @@
 <div class="row" >
   <div class="col-lg-8 col-md-8 offset-lg-2 offset-md-2">
-    <div class="quiz-view">
+    <div class="card card-body quiz-view">
       <div class="row">
         <div class="col-lg-6">
           <div class="center key-instructions">
             <p>Press "E" for</p>
-            <h4 *ngIf="instruction || test1">White People</h4>
-            <h4 *ngIf="instruction2 || test2">Bad</h4>
+            <h4 [ngClass]="{'green' : !instruction5}">{{ leftOption1 }}</h4>
+            <p *ngIf="instruction3 || test3">or</p>
+            <h4 [ngClass]="{'blue': instruction3 || test3, 'green' : instruction5 }"> {{ leftOption2 }}</h4>
           </div>
         </div>
         <div class="col-lg-6">
           <div class="center key-instructions">
             <p>Press "I" for</p>
-            <h4 *ngIf="instruction || test1">Black People</h4>
-            <h4 *ngIf="instruction2 || test2">Good</h4>
+            <h4 [ngClass]="{'green' : !instruction5}">{{ rightOption1 }}</h4>
+              <p *ngIf="instruction3 || test3">or</p>
+              <h4 [ngClass]="{'blue': instruction3 || test3, 'green' : instruction5 }"> {{ rightOption2 }}</h4>
           </div>
         </div>
         <br>
         <!-- this is where view will go --> 
         <div class="container view-wrap" tabindex="1"> 
               <div *ngIf="instruction" class="instructions">
-                <p>Put a left finger on the E key for items that belong to the category African Americans.</p>
-                <p>Put a right finger on the I key for items that belong to the category European Americans.</p>
+                <h4>Part 1 of 5</h4>
+                <hr>
+                <p>Put a left finger on the <strong>E</strong> key for items that belong to the category <span class="green">European Americans</span>.</p>
+                <p>Put a right finger on the <strong>I</strong> key for items that belong to the category <span class="green">African Americans</span>.</p>
                 <p>Items will apear one at a time</p>
-                <p>If you make a mistake, a red X will appear. Press the other key to continue. Go as fast as you can while being accurate.</p>
+                <p>If you make a mistake, a red <span class="red">X</span> will appear. Press the other key to continue. <span class="underline">Go as fast as you can</span> while being accurate.</p>
                  <button (click)="startTest()" class="btn btn-primary">Start Test</button>
               </div>
               <div *ngIf="instruction2" class="instructions">
+                  <h4>Part 2 of 5</h4>
+                  <hr>
                 <p>Put a left finger on the <strong>E</strong> key for items that belong to the category <span class="blue">Bad</span></p>
-                <p>Put a right finger on the <strong>I</strong> key for items that belong to the category <span>Good</span></p>
-                <p>Items will apear one at a time</p>
-                <p>If you make a mistake, a red X will appear. Press the other key to continue. <span class="underline">Go as fast as you can</span> while being accurate.</p>
+                <p>Put a right finger on the <strong>I</strong> key for items that belong to the category <span class="blue">Good</span></p>
+                <p>If you make a mistake, a red <span class="red">X</span> will appear. Press the other key to continue. <span class="underline">Go as fast as you can</span> while being accurate.</p>
                  <button (click)="startTest()" class="btn btn-primary">Start Test</button>
               </div>
               <div *ngIf="instruction3" class="instructions">
-                <p>Put a lasdfasdfasdfasf asfd asdf afon the <strong>E</strong> key for items that belong to the category <span class="blue">Bad</span></p>
-                <p>Put a right finger on the <strong>I</strong> key for items that belong to the category <span>Good</span></p>
-                <p>Items will apear one at a time</p>
-                <p>If you make a mistake, a red X will appear. Press the other key to continue. <span class="underline">Go as fast as you can</span> while being accurate.</p>
+                  <h4>Part 3 of 5</h4>
+                  <hr>
+                <p>Use the <strong>E</strong> key for <span class="blue">European Americans</span> and for <span class="green">Bad</span></p>
+                <p>Use the <strong>I</strong> key for <span class="blue">African Americans</span> to and for <span class="green">Good</span></p>
+                <p>Each Item belongs to one only one category</p>
+                <p>If you make a mistake, a red <span class="red">X</span> will appear. Press the other key to continue. <span class="underline">Go as fast as you can</span> while being accurate.</p>
                  <button (click)="startTest()" class="btn btn-primary">Start Test</button>
               </div>
+              <div *ngIf="instruction4" class="instructions">
+                  <h4>Part 4 of 5</h4>
+                  <hr>
+                  <p><strong>Watch out, the labels have changed position!</strong></p>
+                  <p>Use the left finger on the <strong>E</strong> key for <span class="green">African Americans</span>.</p>
+                  <p>Use the right finger on the <strong>I</strong> key for <span class="green">European Americans</span>.</p>
+                  <p><span class="underline">Go as fast as you can</span> while being accurate</p>
+                  <p>If you make a mistake, a red <span class="red">X</span> will appear. Press the other key to continue. <span class="underline">Go as fast as you can</span> while being accurate.</p>
+                   <button (click)="startTest()" class="btn btn-primary">Start Test</button>
+                </div>
+                <div *ngIf="instruction5" class="instructions">
+                  <h4>Part 5 of 5</h4>
+                  <hr>
+                  <p>Use the <strong>E</strong> key for <span class="green">African Americans</span> and for Bad</p>
+                  <p>Use the <strong>I</strong> key for <span class="green">European Americans</span> to and for Good</p>
+                  <p>Each Item belongs to one only one category</p>
+                  <p>If you make a mistake, a red <span class="red">X</span> will appear. Press the other key to continue. <span class="underline">Go as fast as you can</span> while being accurate.</p>
+                   <button (click)="startTest()" class="btn btn-primary">Start Test</button>
+                </div>
               <div *ngIf="test1" class="test center">
                 <div *ngFor="let person of people, let i = index">
                   <div *ngIf="person.id == personId">
@@ -58,6 +84,55 @@
                   </div>
                 </div>
               </div>
+              <div *ngIf="test3" class="test center">
+                <div *ngIf="word">
+                    <div *ngFor="let word of words, let i = index">
+                        <div *ngIf="word.id == wordId">
+                            <h2 class="test-word">{{ word.word }}</h2>
+                            <h2 class="wrong" *ngIf="wrong">X</h2>
+                            <p class="bottom-text">If you make a mistake, a red <span class="red">x</span> will appear. Press the other key to continue</p>
+                        </div>
+                      </div>
+                </div>
+                <div *ngIf="face">
+                    <div *ngFor="let person of people, let i = index">
+                        <div *ngIf="person.id == personId">
+                            <img [ngClass]="{'picture': test3 || test5}" src={{person.src}}>
+                            <h2 class="wrong" *ngIf="wrong">X</h2>
+                            <p class="bottom-text">If you make a mistake, a red <span class="red">x</span> will appear. Press the other key to continue</p>
+                        </div>
+                      </div>
+                </div>
+              </div>
+              <div *ngIf="test4" class="test center">
+                  <div *ngFor="let person of people, let i = index">
+                    <div *ngIf="person.id == personId">
+                        <img src={{person.src}}>
+                        <h2 class="wrong" *ngIf="wrong">X</h2>
+                        <p class="bottom-text">If you make a mistake, a red <span class="red">x</span> will appear. Press the other key to continue</p>
+                    </div>
+                  </div>
+                </div>
+                <div *ngIf="test5" class="test center">
+                  <div *ngIf="word">
+                    <div *ngFor="let word of words, let i = index">
+                        <div *ngIf="word.id == wordId">
+                            <h2 class="test-word">{{ word.word }}</h2>
+                            <h2 class="wrong" *ngIf="wrong">X</h2>
+                            <p class="bottom-text">If you make a mistake, a red <span class="red">x</span> will appear. Press the other key to continue</p>
+                        </div>
+                      </div>
+                    </div>
+                  <div *ngIf="face">
+                      <div *ngFor="let person of people, let i = index">
+                          <div *ngIf="person.id == personId">
+                              <img [ngClass]="{'picture': test3 || test5}" src={{person.src}}>
+                              <h2 class="wrong" *ngIf="wrong">X</h2>
+                              <p class="bottom-text">If you make a mistake, a red <span class="red">x</span> will appear. Press the other key to continue</p>
+                          </div>
+                        </div>
+                  </div>
+                </div>
         </div>
       </div>
     </div>

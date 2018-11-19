@@ -1,9 +1,9 @@
 .quiz-view {
     margin: 40px auto;
     width: 100%;
-    border: 5px solid #3b7bdc;
+    border: 3px solid #3b7bdc;
     padding: 10px 40px;
-    height: 400px;
+    height: 500px;
 }
 
 .center {
@@ -15,11 +15,12 @@
 }
 
 .instructions {
-    padding: 20px 0px;
+    position: relative;
+    top: 50px;
 }
 
 .test img{
-    padding-top: 50px;
+    padding-top: 90px;
 }
 
 .test-word {
@@ -32,12 +33,14 @@
     font-size: 50px;
     color: red;
     margin-top: 70px;
+    position: absolute;
+    right: 344px;
 }
 
 .bottom-text {
     position: absolute;
-    bottom: 40px;
-    right: 118px;
+    bottom: 0px;
+    right: 100px;
 }
 
 .red {
@@ -46,4 +49,16 @@
 
 .underline {
     text-decoration: underline;
+}
+
+.green {
+  color: #5cb85c;
+}
+
+.blue {
+    color: #007bff;
+}
+
+.picture {
+    padding-top: 50px !important;
 }

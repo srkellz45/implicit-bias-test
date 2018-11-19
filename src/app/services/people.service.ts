@@ -65,7 +65,12 @@ export class PeopleService {
         src: 'assets/white/wm3_nc.jpg',
         african: false,
         id: 10
-      }, 
+      },
+      {
+        src: 'assets/white/wf2_nc.jpg',
+        african: false,
+        id: 11
+      },
     ];
   }
 
